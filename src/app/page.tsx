@@ -2,12 +2,14 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import { DataGrid, GridRowsProp, GridColDef } from "@mui/x-data-grid";
+import { DataTable } from "primereact/datatable";
 import { useMemo } from "react";
 import {
   MaterialReactTable,
   useMaterialReactTable,
   type MRT_ColumnDef, //if using TypeScript (optional, but recommended)
 } from "material-react-table";
+import { Column } from "primereact/column";
 
 //If using TypeScript, define the shape of your data (optional, but recommended)
 interface Person {
@@ -225,10 +227,58 @@ export default function Home() {
           flex: 1,
           display: "flex",
           flexDirection: "row",
+          gap: "1rem",
         }}
       >
-        <DataGrid rows={rows} columns={columns} />
-        <MaterialReactTable table={table} />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "1rem",
+          }}
+        >
+          <h1>MUIX DataGrid</h1>
+          <ul>
+            <li>Pin and column sort is only available in pro</li>
+          </ul>
+          <DataGrid rows={rows} columns={columns} />
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "1rem",
+          }}
+        >
+          <h1>MaterialReactTable</h1>
+          <ul>
+            <li>Has pin and column sort</li>
+          </ul>
+          <MaterialReactTable table={table} />
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "1rem",
+          }}
+        >
+          <h1>primereact DataTable</h1>
+          <ul>
+            <li>Has column sort, but no pin</li>
+          </ul>
+          <DataTable
+            value={data}
+            columnResizeMode="expand"
+            resizableColumns
+            reorderableColumns
+            showGridlines
+            tableStyle={{ minWidth: "50rem" }}
+          >
+            <Column field="name" header="Name" sortable></Column>
+            <Column field="age" header="Age" sortable></Column>
+          </DataTable>
+        </div>
       </div>
     </main>
   );
