@@ -4,4 +4,4 @@ const nextConfig = {
   basePath: "/mui-data-table-sandbox",
 };
 
-export default nextConfig;
+module.exports = nextConfig;
