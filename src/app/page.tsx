@@ -239,7 +239,7 @@ export default function Home() {
         >
           <h1>MUIX DataGrid</h1>
           <ul>
-            <li>Pin and column sort is only available in pro</li>
+            <li>Pin and column reorder are only available in pro</li>
           </ul>
           <DataGrid rows={rows} columns={columns} />
         </div>
@@ -252,7 +252,7 @@ export default function Home() {
         >
           <h1>MaterialReactTable</h1>
           <ul>
-            <li>Has pin and column sort</li>
+            <li>Has pin and column reorder</li>
           </ul>
           <MaterialReactTable table={table} />
         </div>
@@ -265,7 +265,7 @@ export default function Home() {
         >
           <h1>primereact DataTable</h1>
           <ul>
-            <li>Has column sort, but no pin</li>
+            <li>Has column reorder, but no pin</li>
           </ul>
           <DataTable
             value={data}
