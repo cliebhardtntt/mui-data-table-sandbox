@@ -33,7 +33,7 @@ jobs:
         run: npx next build
 
       - name: Show output
-        run: ls ./out
+        run: pwd && ls
 
       - name: Upload artifact 📡
         uses: actions/upload-pages-artifact@v3
